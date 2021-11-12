@@ -14,8 +14,9 @@ hr {
   }
   
 .btn {
-    font-weight: 700;
-    border-radius: 300px;
+  font-size: 15px;
+    font-weight: 1000;
+    border-radius: 450px;
     text-transform: uppercase;
     color:#000
   }
@@ -40,8 +41,4 @@ hr {
 
 .story{
   font-size: 1.3em;
-}
-
-.intro{
-  
 }
