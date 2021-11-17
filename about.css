@@ -46,9 +46,6 @@ hr {
   font-style: italic;
 }
 
-.left{
-  
-}
 
 
 .carousel,
@@ -238,8 +235,8 @@ hr {
 }
 .carousel-caption {
   position: absolute;
-  left: 15%;
-  right: 15%;
+  left: 20px;
+  right: 20px;
   bottom: 20px;
   z-index: 10;
   padding-top: 20px;
@@ -415,11 +412,11 @@ hr {
   color: #6b6b6b;
 }
 .carousel-control.right {
-  right: 6rem;
+  right: 3rem;
   background-image: none;
 }
 .carousel-control.left {
-  margin-right: 32px;
+  margin-right: auto;
   background-image: none;
 }
 .template-example {
