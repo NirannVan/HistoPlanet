@@ -45,3 +45,16 @@ hr {
 .story-extract{
   font-style: italic;
 }
+
+
+cre{
+  font-size: 0.8em;
+  font-style:italic;
+  text-align: left;
+}
+
+intro{
+  font-size: 0.7em;
+  font-style:italic;
+  text-align: left;
+}
