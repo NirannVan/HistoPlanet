@@ -29,9 +29,11 @@ function answerClick(){
     {
         showPart2();
     }else{
-        if(countWrong==3)
+        if(countWrong>=3)
         {
+        story.appendChild(wrong);
         story.appendChild(hint);
+        input_0_1.value="";
         }
         else
         {
