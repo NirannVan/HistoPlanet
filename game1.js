@@ -30,7 +30,9 @@ var wrong_3=document.getElementById("wrong_3");
 var correct_3=document.getElementById("correct_3");
 var check_3=document.getElementById("check_3");
 var button_3_0=document.getElementById("button_3_0")
-var thanks=document.getElementById("thanks")
+
+var thanks=document.getElementById("thanks");
+var end=document.getElementById("end");
 
 var limitWrong=2;
 var output_text=0;
@@ -44,7 +46,6 @@ hint_1.remove();
 correct_1.remove();
 wrong_1.remove();
 
-
 function showPart2(){
     story.appendChild(part_2);
     hint_2.remove();
@@ -57,7 +58,8 @@ function showPart3(){
     hint_3.remove();
     correct_3.remove();
     wrong_3.remove();
-
+    end.remove();
+    thanks.remove();
 }
 
 function checkAnswer_1(){
@@ -149,11 +151,13 @@ function checkAnswer_3(){
     {
         if(output_text==2)
 	    {button_3_0.appendChild(document.createTextNode(" - HOÀN THÀNH"));
-        thanks.appendChild(document.createTextNode("Cảm ơn bạn đang đọc hết chapter 1 <3"));
         output_text++;
         }
         wrong_3.remove();
         check_3.appendChild(correct_3);
+        part_3.appendChild(thanks);
+        part_3.appendChild(end);
+        
         countWrong=0;
     }
     else if(output_text==2)
