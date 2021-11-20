@@ -148,12 +148,12 @@ function checkAnswer_3(){
     {
         if(output_text==2)
 	    {button_3_0.appendChild(document.createTextNode(" - HOÀN THÀNH"));
+        thanks.appendChild(document.createTextNode("Cảm ơn bạn đang đọc hết chapter 1 <3"));
         output_text++;
         }
         wrong_3.remove();
         check_3.appendChild(correct_3);
         countWrong=0;
-        thanks.appendChild(document.createTextNode("Cảm ơn bạn đang đọc hết chapter 1 <3"))
     }
     else if(output_text==2)
     {
