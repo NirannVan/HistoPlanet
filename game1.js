@@ -162,7 +162,7 @@ function checkAnswer_3(){
         {
         check_3.appendChild(wrong_3);
         part_3.appendChild(hint_3);
-        answer_2.value="";
+        answer_3.value="";
 
         }
         else
