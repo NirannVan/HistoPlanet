@@ -32,6 +32,7 @@ var check_3=document.getElementById("check_3");
 var button_3_0=document.getElementById("button_3_0")
 var thanks=document.getElementById("thanks")
 
+var limitWrong=2;
 var output_text=0;
 var count_help=0
 var countWrong=0;
@@ -73,7 +74,7 @@ function checkAnswer_1(){
     }
     else if(output_text==0)
     {
-        if(countWrong>=3)
+        if(countWrong>=limitWrong)
         {
         check_1.appendChild(wrong_1);
         part_1.appendChild(hint_1);
@@ -115,7 +116,7 @@ function checkAnswer_2(){
     }
     else if(output_text==1)
     {
-        if(countWrong>=3)
+        if(countWrong>=limitWrong)
         {
         check_2.appendChild(wrong_2);
         part_2.appendChild(hint_2);
@@ -157,11 +158,12 @@ function checkAnswer_3(){
     }
     else if(output_text==2)
     {
-        if(countWrong>=3)
+        if(countWrong>=limitWrong)
         {
         check_3.appendChild(wrong_3);
         part_3.appendChild(hint_3);
         answer_2.value="";
+
         }
         else
         {
