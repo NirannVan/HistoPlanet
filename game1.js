@@ -11,6 +11,7 @@ var hint_1=document.getElementById("hint_1");
 var wrong_1=document.getElementById("wrong_1");
 var correct_1=document.getElementById("correct_1")
 var check_1=document.getElementById("check_1");
+var button_1_0=document.getElementById("button_1_0");
 
 var question_2=document.getElementById("question_2");
 var answer_2=document.getElementById("answer_2");
@@ -19,6 +20,7 @@ var hint_2=document.getElementById("hint_2");
 var wrong_2=document.getElementById("wrong_2");
 var correct_2=document.getElementById("correct_2");
 var check_2=document.getElementById("check_2");
+var button_2_0=document.getElementById("button_2_0")
 
 var question_3=document.getElementById("question_3");
 var answer_3=document.getElementById("answer_3");
@@ -27,7 +29,10 @@ var hint_3=document.getElementById("hint_3");
 var wrong_3=document.getElementById("wrong_3");
 var correct_3=document.getElementById("correct_3");
 var check_3=document.getElementById("check_3");
+var button_3_0=document.getElementById("button_3_0")
+var thanks=document.getElementById("thanks")
 
+var output_text=0;
 var count_help=0
 var countWrong=0;
 var answer=["4","vi khuẩn","Alexandre Yersin"]
@@ -51,17 +56,22 @@ function showPart3(){
     hint_3.remove();
     correct_3.remove();
     wrong_3.remove();
+
 }
 
 function checkAnswer_1(){
     if(answer_1.value==answer[0])
     {
+        if(output_text==0)
+	    {button_1_0.appendChild(document.createTextNode(" - HOÀN THÀNH"));
+        output_text++;
+        }
         wrong_1.remove();
         check_1.appendChild(correct_1);
         countWrong=0;
         showPart2();
     }
-    else
+    else if(output_text==0)
     {
         if(countWrong>=3)
         {
@@ -94,12 +104,16 @@ answer_1.addEventListener("keypress", function(event){
 function checkAnswer_2(){
     if(answer_2.value==answer[1])
     {
+        if(output_text==1)
+	    {button_2_0.appendChild(document.createTextNode(" - HOÀN THÀNH"));
+        output_text++;
+        }
         wrong_2.remove();
         check_2.appendChild(correct_2);
         countWrong=0;
         showPart3();
     }
-    else
+    else if(output_text==1)
     {
         if(countWrong>=3)
         {
@@ -132,12 +146,16 @@ answer_2.addEventListener("keypress", function(event){
 function checkAnswer_3(){
     if(answer_3.value==answer[2])
     {
+        if(output_text==2)
+	    {button_3_0.appendChild(document.createTextNode(" - HOÀN THÀNH"));
+        output_text++;
+        }
         wrong_3.remove();
         check_3.appendChild(correct_3);
         countWrong=0;
-        
+        thanks.appendChild(document.createTextNode("Cảm ơn bạn đang đọc hết chapter 1 <3"))
     }
-    else
+    else if(output_text==2)
     {
         if(countWrong>=3)
         {
