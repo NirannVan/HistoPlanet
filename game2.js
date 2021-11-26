@@ -3,6 +3,8 @@ var story=document.getElementById("story");
 var part_1=document.getElementById("part_1");
 var part_2=document.getElementById("part_2");
 var part_3=document.getElementById("part_3");
+var part_3_1=document.getElementById("part_3_1");
+var part_3_2=document.getElementById("part_3_2");
 var part_4=document.getElementById("part_4");
 
 var question_1=document.getElementById("question_1");
@@ -26,12 +28,24 @@ var button_2_0=document.getElementById("button_2_0")
 var question_3=document.getElementById("question_3");
 var answer_3=document.getElementById("answer_3");
 var button_3=document.getElementById("button_3");
-var hint_3=document.getElementById("hint_3");
 var wrong_3=document.getElementById("wrong_3");
 var correct_3=document.getElementById("correct_3");
 var check_3=document.getElementById("check_3");
-var button_3_0=document.getElementById("button_3_0")
+var button_3_0=document.getElementById("button_3_0");
 
+var question_3_=document.getElementById("question_3_");
+var answer_3_=document.getElementById("answer_3_");
+var button_3_=document.getElementById("button_3_");
+var wrong_3_=document.getElementById("wrong_3_");
+var correct_3_=document.getElementById("correct_3_");
+var check_3_=document.getElementById("check_3_");
+var button_3_0_=document.getElementById("button_3_0_");
+
+//story part 3 select
+var select_1=document.getElementById("select_1");
+var button_select=document.getElementById("button_select");
+var button_part_3_1=document.getElementById("button_part_3_1");
+var button_part_3_2=document.getElementById("button_part_3_2");
 
 var question_4=document.getElementById("question_3");
 var answer_4=document.getElementById("answer_3");
@@ -49,10 +63,15 @@ var limitWrong=2;
 var output_text=0;
 var count_help=0
 var countWrong=0;
-var answer=["3","TUTANKHAMUN","Alexandre Yersin"]
+var answer=["3","TUTANKHAMUN","CANOPIC"]
 
 part_2.remove();
 part_3.remove();
+
+// test
+part_3_1.remove();
+part_3_2.remove();
+
 part_4.remove();
 hint_1.remove();
 correct_1.remove();
@@ -67,12 +86,15 @@ function showPart2(){
 
 function showPart3(){
     story.appendChild(part_3);
-    hint_3.remove();
-    correct_3.remove();
-    wrong_3.remove();
-    end.remove();
-    thanks.remove();
+    part_3_1.remove();
+    part_3_2.remove();
 }
+
+function showPart4(){
+    story.appendChild(part_4);
+
+}
+
 
 function checkAnswer_1(){
     if(answer_1.value==answer[0])
@@ -154,10 +176,6 @@ answer_2.addEventListener("keypress", function(event){
     }
 })
 
-
-
-
-
 function checkAnswer_3(){
     if(answer_3.value==answer[2])
     {
@@ -166,29 +184,49 @@ function checkAnswer_3(){
         output_text++;
         }
         wrong_3.remove();
-        check_3.appendChild(correct_3);
-        part_3.appendChild(thanks);
-        part_3.appendChild(end);
-        
-        countWrong=0;
+        check_3.appendChild(correct_3);  
+        showPart4();
     }
-    else if(output_text==2)
-    {
-        if(countWrong>=limitWrong)
-        {
-        check_3.appendChild(wrong_3);
-        part_3.appendChild(hint_3);
-        answer_3.value="";
-
-        }
-        else
-        {
+    else{
         check_3.appendChild(wrong_3);
         answer_3.value="";
-        countWrong++;
-        }
     }
 }
+
+
+function checkAnswer_3_(){
+    if(answer_3_.value==answer[2])
+    {
+        if(output_text==2)
+	    {button_3_0_.appendChild(document.createTextNode(" - HOÀN THÀNH"));
+        output_text++;
+        }
+        wrong_3_.remove();
+        check_3_.appendChild(correct_3_);  
+        showPart4();
+    }
+    else{
+        check_3_.appendChild(wrong_3_);
+        answer_3_.value="";
+    }
+}
+
+button_part_3_1.addEventListener("click", function(){
+    button_select_1.remove();
+    select_1.appendChild(document.createTextNode("_ Bạn đã chọn đi bên TRÁI. Nhưng đừng lo bạn có thể chọn lại ở cuối truyện"))
+    part_3.appendChild(part_3_1);
+    correct_3.remove();
+    wrong_3.remove();
+})
+
+button_part_3_2.addEventListener("click", function(){
+    button_select_1.remove();
+    select_1.appendChild(document.createTextNode("_ Bạn đã chọn đi bên PHẢI. Nhưng đừng lo bạn có thể chọn lại ở cuối truyện"))
+    part_3.appendChild(part_3_2);
+    correct_3_.remove();
+    wrong_3_.remove(); 
+    answer[2]="SPHYNX";
+})
 
 button_3.addEventListener("click",checkAnswer_3);
 
@@ -196,5 +234,14 @@ answer_3.addEventListener("keypress", function(event){
     if(event.keyCode === 13)
     {
         checkAnswer_3();
+    }
+})
+
+button_3_.addEventListener("click",checkAnswer_3_);
+
+answer_3.addEventListener("keypress", function(event){
+    if(event.keyCode === 13)
+    {
+        checkAnswer_3_();
     }
 })

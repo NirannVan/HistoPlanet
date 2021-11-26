@@ -58,3 +58,8 @@ intro{
   font-style:italic;
   text-align: left;
 }
+
+.new_font{
+  font-family:sans-serif;
+  size:1.2em;
+}
